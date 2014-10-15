@@ -226,7 +226,17 @@ def move(exits, direction):
     """
     return rooms[exits[direction]]
 
-
+def credits():
+    #Will run when game compete
+    print("TITLE OF GAME")
+    print("By Group 11")
+    print("Aiden Bracher")
+    print("Ian Cox")
+    print("Jordan Paskin")
+    print("Kenneth Cynric Medina Dassala")
+    print("Nathan Franlin")
+    print("PrabhatGurung")
+    print("Vasil Grigorov")
 
 
 
