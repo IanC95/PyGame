@@ -55,7 +55,7 @@ room_office = {
 in their eyes. If you go west you can return to the
 Queen's Buildings.""",
 
-    "exits": {"east": "Parking"}# ADD EXITS HERE!
+    "exits": {"west": "Parking"}# ADD EXITS HERE!
 }
 
 
