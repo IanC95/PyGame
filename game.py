@@ -227,7 +227,7 @@ def move(exits, direction):
     return rooms[exits[direction]]
 
 def credits():
-    #Will run when game compete
+    #Will run when game is complete
     print("TITLE OF GAME")
     print("By Group 11")
     print("Aiden Bracher")
