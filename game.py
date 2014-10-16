@@ -2,8 +2,8 @@
 
 from map import rooms
 import string
-
-
+running = 1 #Makes it possible to stop the game.
+finished = 0 # Will be set to one to run credits function and end the game.
 def remove_punct(text):
     """This function is used to remove all punctuation
     marks from a string. Spaces do not count as punctuation and should
@@ -226,7 +226,10 @@ def move(exits, direction):
     """
     return rooms[exits[direction]]
 
-
+def credits():
+    print("Game Over")
+    print("By Group 11")
+    running = 0
 
 
 
@@ -236,7 +239,7 @@ def main():
     current_room = rooms["Reception"]
 
     # Main game loop
-    while True: 
+    while running == 1: 
         # Display game status (room description etc.)
         display_room(current_room)
                       
