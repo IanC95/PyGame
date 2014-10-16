@@ -2,8 +2,7 @@
 
 from map import rooms
 import string
-#import PIL
-#from PIL import Image
+from PIL import Image
 
 def remove_punct(text):
     """This function is used to remove all punctuation
@@ -231,7 +230,7 @@ def credits():
     #Will run when game is complete
     print("Vasil's Fantasy\n\n".upper())
     print("By Group 11")
-    print("Aiden Bracher")
+    print("Aidan Bracher")
     print("Ian Cox")
     print("Jordan Paskin")
     print("Kenneth Cynric Medina Dassala")
@@ -246,7 +245,7 @@ def startup():
 
 def DisplayPic():
     
-    img = Image.open('Cat.png')
+    img = Image.open('map.png')
     img.show()
 
 
@@ -274,8 +273,8 @@ def main():
             map = 1
             print("!!!!!!You have picked up a map from the robs, your wallet should be in the cafeteria.!!!!!!")
 
-        #if map == 1:
-            #DisplayPic()
+        if map == 1:
+            DisplayPic()
 
         if map ==1 and current_room["name"] == "the Cafeteria" and wallet != 1:
             wallet = 1
