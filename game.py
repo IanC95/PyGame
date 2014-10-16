@@ -2,8 +2,9 @@
 
 from map import rooms
 import string
-import PIL
-from PiIL import Image
+#import PIL
+#from PIL import Image
+
 def remove_punct(text):
     """This function is used to remove all punctuation
     marks from a string. Spaces do not count as punctuation and should
@@ -228,7 +229,7 @@ def move(exits, direction):
 
 def credits():
     #Will run when game is complete
-    print("Vasil's Fantasy\n\n")
+    print("Vasil's Fantasy\n\n".upper())
     print("By Group 11")
     print("Aiden Bracher")
     print("Ian Cox")
@@ -239,7 +240,7 @@ def credits():
     print("Vasil Grigorov")
 
 def startup():
-    print("You are lost in the reception of the Queens buildings.\nYou have misplaced your wallet, and don't know where.\nThe Robs can give you a map to find where you are.")
+    print("!!!!!!You are lost in the reception of the Queens buildings.\nYou have misplaced your wallet, and don't know where.\nThe Robs can give you a map to find where you are.!!!!!!")
     print("\nCurrently you are in:")
     
 
@@ -271,14 +272,14 @@ def main():
 
         if map == 0 and current_room["name"] == "Robs' room":
             map = 1
-            print("You have picked up a map from the robs, your wallet should be in the cafeteria.")
+            print("!!!!!!You have picked up a map from the robs, your wallet should be in the cafeteria.!!!!!!")
 
-        if map == 1:
-            DisplayPic()
+        #if map == 1:
+            #DisplayPic()
 
-        if map ==1 and current_room["name"] == "the Cafeteria":
+        if map ==1 and current_room["name"] == "the Cafeteria" and wallet != 1:
             wallet = 1
-            print("You have picked up your wallet, head to the Tutor room to attend your tutorial!")
+            print("!!!!!!You have picked up your wallet, head to the Tutor room to attend your tutorial!!!!!!")
 
         if current_room["name"] == "your personal tutor's office" and wallet == 1:
             finished = 1
