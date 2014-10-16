@@ -55,15 +55,23 @@ room_office = {
 in their eyes. If you go west you can return to the
 Queen's Buildings.""",
 
-    "exits": {"north": "Parking"}# ADD EXITS HERE!
+    "exits": {"north": "Parking", "west": "Cafeteria"}# ADD EXITS HERE!
 }
 
+room_cafe = {
+    "name": "the Cafeteria",
 
+    "description":
+    """Really expensive food is served here, """,
+
+    "exits": {"east": "Office"}# ADD EXITS HERE!
+}
 
 rooms = {
     "Reception": room_reception,
     "Robs": room_robs,
     "Tutor": room_tutor,
     "Parking": room_parking,
-    "Office": room_office
+    "Office": room_office,
+    "Cafeteria": room_cafe
 }

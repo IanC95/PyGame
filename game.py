@@ -2,8 +2,8 @@
 
 from map import rooms
 import string
-
-
+import PIL
+from PiIL import Image
 def remove_punct(text):
     """This function is used to remove all punctuation
     marks from a string. Spaces do not count as punctuation and should
@@ -228,30 +228,65 @@ def move(exits, direction):
 
 def credits():
     #Will run when game is complete
-    print("TITLE OF GAME")
+    print("Vasil's Fantasy\n\n")
     print("By Group 11")
     print("Aiden Bracher")
     print("Ian Cox")
     print("Jordan Paskin")
     print("Kenneth Cynric Medina Dassala")
     print("Nathan Franlin")
-    print("PrabhatGurung")
+    print("Prabhat Gurung")
     print("Vasil Grigorov")
 
+def startup():
+    print("You are lost in the reception of the Queens buildings.\nYou have misplaced your wallet, and don't know where.\nThe Robs can give you a map to find where you are.")
+    print("\nCurrently you are in:")
+    
+
+def DisplayPic():
+    
+    img = Image.open('Cat.png')
+    img.show()
 
 
 # This is the entry point of our program
 def main():
     # Start game at the reception
     current_room = rooms["Reception"]
+    startup()
+    map = 0
+    wallet = 0
+    finished = 0
+    running = 1
 
     # Main game loop
-    while True: 
+    while running  == 1: 
         # Display game status (room description etc.)
         display_room(current_room)
                       
         # What are the possible exits from the current room?
         exits = current_room["exits"]
+
+
+
+        if map == 0 and current_room["name"] == "Robs' room":
+            map = 1
+            print("You have picked up a map from the robs, your wallet should be in the cafeteria.")
+
+        if map == 1:
+            DisplayPic()
+
+        if map ==1 and current_room["name"] == "the Cafeteria":
+            wallet = 1
+            print("You have picked up your wallet, head to the Tutor room to attend your tutorial!")
+
+        if current_room["name"] == "your personal tutor's office" and wallet == 1:
+            finished = 1
+
+        if finished == 1:
+            credits()
+            running = 0
+            break
 
         # Show the menu with exits and ask the player
         direction = menu(exits)
